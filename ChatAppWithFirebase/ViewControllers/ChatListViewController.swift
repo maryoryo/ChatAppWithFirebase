@@ -25,19 +25,31 @@ class ChatListViewController: UIViewController {
     }
     private var chatrooms = [ChatRoom]()
     
+    private var chatRoomListener: ListenerRegistration?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         confirmLoggedInUser()
-        fetchLoginUserInfo()
         fetchChatroomsInfoFromFirebase()
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        fetchLoginUserInfo()
+    }
+    
     // FireStoreからチャットルームの情報を取得する
-    private func fetchChatroomsInfoFromFirebase() {
-        Firestore.firestore().collection("chatRooms")
+    func fetchChatroomsInfoFromFirebase() {
+        // 表示するルームデータが二重にならないように削除する
+        chatRoomListener?.remove()
+        chatrooms.removeAll()
+        chatListTableView.reloadData()
+        
+        chatRoomListener = Firestore.firestore().collection("chatRooms")
         // リアルタイムで情報を変更させる
             .addSnapshotListener{ (snapshots, error) in
                 // .getDocuments(completion: { (snapshots, error) in
@@ -64,6 +76,10 @@ class ChatListViewController: UIViewController {
         chatroom.documentId = documentChange.document.documentID
         
         guard let uid = Auth.auth().currentUser?.uid else { return }
+        let isContain = chatroom.members.contains(uid)
+        
+        if !isContain { return }
+        
         chatroom.members.forEach({ (memberUid) in
             if memberUid != uid {
                 Firestore.firestore().collection("users").document(memberUid).getDocument(completion: { (snapshot, error) in
@@ -77,10 +93,28 @@ class ChatListViewController: UIViewController {
                     
                     chatroom.pertnerUser = user
                     
-                    print("ユーザー情報の取得に成功しました")
-                    self.chatrooms.append(chatroom)
-                    print("self.chatrooms.count: \(self.chatrooms.count)")
-                    self.chatListTableView.reloadData()
+                    guard let chatroomId = chatroom.documentId else { return }
+                    let latestMessageId = chatroom.latestMessageId
+                    
+                    if latestMessageId == "" {
+                        self.chatrooms.append(chatroom)
+                        self.chatListTableView.reloadData()
+                        return
+                    }
+                    
+                    // 最新のメッセージ情報を取得し反映
+                    Firestore.firestore().collection("chatRooms").document(chatroomId).collection("messages").document(latestMessageId).getDocument(completion: { (snapshot, error) in
+                        if let error = error {
+                            print("最新情報の取得に失敗しました：\(error)")
+                            return
+                        }
+                        guard let dic = snapshot?.data() else { return }
+                        let message = Message(dic: dic)
+                        
+                        chatroom.latestMessage = message
+                        self.chatrooms.append(chatroom)
+                        self.chatListTableView.reloadData()
+                    })
                 })
             }
         })
@@ -110,6 +144,11 @@ class ChatListViewController: UIViewController {
         let rightBarButton = UIBarButtonItem(title: "新規チャット", style: .plain, target: self, action: #selector(tappedNavRightBarButton))
         navigationItem.rightBarButtonItem = rightBarButton
         navigationItem.rightBarButtonItem?.tintColor = .white
+        
+        //　ログアウトボタン
+        let logoutBarButton = UIBarButtonItem(title: "ログアウト", style: .plain, target: self, action: #selector(tappedNavLogoutButton))
+        navigationItem.leftBarButtonItem = logoutBarButton
+        navigationItem.leftBarButtonItem?.tintColor = .white
     }
     
     // ログイン済みかどうかを判定
@@ -117,8 +156,9 @@ class ChatListViewController: UIViewController {
         if Auth.auth().currentUser?.uid == nil {
             let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "SignUpViewController")
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true)
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true)
         }
     }
         
@@ -127,6 +167,19 @@ class ChatListViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "UserListViewController")
         let nav = UINavigationController(rootViewController: vc)
         self.present(nav, animated: true, completion: nil)
+    }
+    
+    @objc private func tappedNavLogoutButton() {
+        do {
+            try Auth.auth().signOut()
+            let storyboard = UIStoryboard(name: "SignUp", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        } catch {
+            print("ログアウトに失敗しました：\(error)")
+        }
     }
     
     // 現在ログインしているユーザーの情報を反映
@@ -198,16 +251,6 @@ extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
 
 class ChatListTableViewCell: UITableViewCell {
     
-//    var user: User? {
-//        didSet {
-//            if let user = user {
-//                pertnerLabel.text = user.username
-//    //            userImageView.image = user.profileImageUrl
-//                dateLabel.text = dataFormatterForDateLabel(date: user.createdAt.dateValue())
-//                latestMessageLabel.text = user.email
-//            }
-//        }
-//    }
     var chatroom: ChatRoom? {
         didSet {
             if let chatroom = chatroom {
@@ -216,7 +259,8 @@ class ChatListTableViewCell: UITableViewCell {
                 guard let url = URL(string: chatroom.pertnerUser?.profileImageUrl ?? "") else { return }
                 Nuke.loadImage(with: url, into: userImageView)
                 
-                dateLabel.text = dataFormatterForDateLabel(date: chatroom.createdAt.dateValue())
+                dateLabel.text = dataFormatterForDateLabel(date: chatroom.latestMessage?.createdAt.dateValue() ?? Date())
+                latestMessageLabel.text = chatroom.latestMessage?.message
             }
         }
     }

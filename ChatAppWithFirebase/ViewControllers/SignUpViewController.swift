@@ -10,6 +10,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseFirestore
+import PKHUD
 
 class SignUpViewController: UIViewController {
 
@@ -24,6 +25,17 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    // Viewに表示される処理
+    private func setupViews() {
         profileImageButton.layer.cornerRadius = 85
         profileImageButton.layer.borderWidth = 1
         profileImageButton.layer.borderColor = UIColor.rgb(red: 240, green: 240, blue: 240).cgColor
@@ -38,8 +50,10 @@ class SignUpViewController: UIViewController {
         
         registerButton.isEnabled = false
         registerButton.backgroundColor = .rgb(red: 100, green: 100, blue: 100)
+        
+        // 既にアカウントをお持ちの方ボタン押下時
+        alreadyHaveAccountButton.addTarget(self, action: #selector(tappedAlreadyAccountButton), for: .touchUpInside)
     }
-    
     
     @IBAction func tappedProfileImageButton(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
@@ -51,9 +65,12 @@ class SignUpViewController: UIViewController {
     @objc private func tappedRegisterButton() {
         
         // 選択されたプロフィール画像
-        guard let image = profileImageButton.imageView?.image else { return }
+        let image = profileImageButton.imageView?.image ?? UIImage(named: "profImage")
         // プロフィール画像のクオリティ
-        guard let uploadImage = image.jpegData(compressionQuality: 0.3) else { return }
+        guard let uploadImage = image?.jpegData(compressionQuality: 0.3) else { return }
+        
+        HUD.show(.progress)
+        
         // ファイル名は一意のIDにする
         let fileName = NSUUID().uuidString
         // ストレージを配置
@@ -61,12 +78,14 @@ class SignUpViewController: UIViewController {
         
         strageRef.putData(uploadImage, metadata: nil) { (metaData, error) in
             if let error = error {
+                HUD.hide()
                 print("FireStrageへの保存に失敗しました：\(error)")
                 return
             }
             print("FireStrageへの情報の保存が成功しました")
             strageRef.downloadURL(completion: { (url, error) in
                 if let error = error {
+                    HUD.hide()
                     print("FireStrageからのダウンロードに失敗しました：\(error)")
                     return
                 }
@@ -79,6 +98,12 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    @objc private func tappedAlreadyAccountButton() {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     private func createUserToFirebase(profileImage: String) {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
@@ -86,6 +111,7 @@ class SignUpViewController: UIViewController {
         // FireAuthへの登録
         Auth.auth().createUser(withEmail: email, password: password) { (res, error) in
             if let error = error {
+                HUD.hide()
                 print("認証情報の保存に失敗しました：\(error)")
                 return
             }
@@ -102,9 +128,11 @@ class SignUpViewController: UIViewController {
             ]
             Firestore.firestore().collection("users").document(uid).setData(docData) { (error) in
                 if let error = error {
+                    HUD.hide()
                     print("Firestroreへの保存に失敗しました：\(error)")
                     return
                 }
+                HUD.hide()
                 print("Firestroreへの情報の保存が成功しました")
                 
                 self.dismiss(animated: true, completion: nil)
@@ -113,6 +141,10 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    // 外枠を押下した時にキーボードが閉じる
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 
 extension SignUpViewController: UITextFieldDelegate {
