@@ -33,6 +33,8 @@ class ChatListViewController: UIViewController {
         setupViews()
         confirmLoggedInUser()
         fetchChatroomsInfoFromFirebase()
+        
+        
 
     }
     

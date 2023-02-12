@@ -17,6 +17,8 @@
 		A413B0542973DD4200B9FD0E /* ChatInputAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A413B0532973DD4200B9FD0E /* ChatInputAccessoryView.xib */; };
 		A413B0562973DEE800B9FD0E /* ChatInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A413B0552973DEE800B9FD0E /* ChatInputAccessoryView.swift */; };
 		A413B0582973FB4000B9FD0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A413B0572973FB4000B9FD0E /* GoogleService-Info.plist */; };
+		A4460D3F299535A30084B4D9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4460D3E299535A30084B4D9 /* TabBarController.swift */; };
+		A4460D412998C48D0084B4D9 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4460D402998C48D0084B4D9 /* TabBar.storyboard */; };
 		A46BA852297403930052B162 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A46BA851297403930052B162 /* SignUp.storyboard */; };
 		A46BA854297407A20052B162 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46BA853297407A20052B162 /* SignUpViewController.swift */; };
 		A46BA857297C08D10052B162 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46BA856297C08D10052B162 /* User.swift */; };
@@ -46,6 +48,8 @@
 		A413B0532973DD4200B9FD0E /* ChatInputAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatInputAccessoryView.xib; sourceTree = "<group>"; };
 		A413B0552973DEE800B9FD0E /* ChatInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputAccessoryView.swift; sourceTree = "<group>"; };
 		A413B0572973FB4000B9FD0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A4460D3E299535A30084B4D9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A4460D402998C48D0084B4D9 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		A46BA851297403930052B162 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		A46BA853297407A20052B162 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A46BA856297C08D10052B162 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 				A413B0572973FB4000B9FD0E /* GoogleService-Info.plist */,
 				A4089797297D5C2900D60C9F /* UserList.storyboard */,
 				A46BA85A297C34370052B162 /* UserListViewController.swift */,
+				A4460D3E299535A30084B4D9 /* TabBarController.swift */,
+				A4460D402998C48D0084B4D9 /* TabBar.storyboard */,
 			);
 			path = ChatAppWithFirebase;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4F69F572973238E00B01CDF /* ChatList.storyboard in Resources */,
+				A4460D412998C48D0084B4D9 /* TabBar.storyboard in Resources */,
 				A4F69F59297323A000B01CDF /* ChatRoom.storyboard in Resources */,
 				A4089798297D5C2900D60C9F /* UserList.storyboard in Resources */,
 				A413B04F2973259700B9FD0E /* LaunchScreen.storyboard in Resources */,
@@ -323,6 +330,7 @@
 				A4F69F562973238E00B01CDF /* ChatListViewController.swift in Sources */,
 				A408979A298553E400D60C9F /* Message.swift in Sources */,
 				A46BE7C82972EB7D009944F0 /* SceneDelegate.swift in Sources */,
+				A4460D3F299535A30084B4D9 /* TabBarController.swift in Sources */,
 				A408979E298EA4A800D60C9F /* LoginViewController.swift in Sources */,
 				A46BA85F297D52D10052B162 /* ChatRoom.swift in Sources */,
 			);

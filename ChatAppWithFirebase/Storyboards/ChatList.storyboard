@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xdC-ez-bZH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kYp-HW-gIF">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="765"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellId" rowHeight="80" id="0FH-GA-hA2" customClass="ChatListTableViewCell" customModule="ChatAppWithFirebase" customModuleProvider="target">
@@ -80,7 +80,7 @@
                         <constraints>
                             <constraint firstItem="kYp-HW-gIF" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="0jK-qY-EGJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kYp-HW-gIF" secondAttribute="trailing" id="6qy-v3-YY1"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kYp-HW-gIF" secondAttribute="bottom" id="9Zu-dS-Y8a"/>
+                            <constraint firstItem="kYp-HW-gIF" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="50" id="XGf-WI-Ho4"/>
                             <constraint firstItem="kYp-HW-gIF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="mzc-qZ-36J"/>
                         </constraints>
                     </view>
@@ -91,12 +91,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="947.32824427480909" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="2800.7633587786258" y="3.5211267605633805"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="5aj-rV-gM3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xdC-ez-bZH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="taD-yZ-G4F"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="phg-tt-tQ5">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -115,7 +116,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjQ-au-Kd8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20.610687022900763" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1874.0458015267175" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
