@@ -11,6 +11,8 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseFirestore
 import PKHUD
+import AdSupport
+import AppTrackingTransparency
 
 class SignUpViewController: UIViewController {
 
@@ -32,6 +34,51 @@ class SignUpViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.isHidden = true
+        idfaAlert()
+    }
+    
+    // IDFA(ATT対応)表示
+    private func idfaAlert() {
+        if #available(iOS 14, *) {
+            switch ATTrackingManager.trackingAuthorizationStatus {
+            case .authorized:
+                print("Allow Tracking")
+                print("IDFA: \(ASIdentifierManager.shared().advertisingIdentifier)")
+            case .denied:
+                print("😭拒否")
+            case .restricted:
+                print("🥺制限")
+            case .notDetermined:
+                showRequestTrackingAuthorizationAlert()
+            @unknown default:
+                fatalError()
+            }
+        } else {// iOS14未満
+            if ASIdentifierManager.shared().isAdvertisingTrackingEnabled {
+                print("Allow Tracking")
+                print("IDFA: \(ASIdentifierManager.shared().advertisingIdentifier)")
+            } else {
+                print("🥺制限")
+            }
+        }
+    }
+    
+    //　IDFA結果Alert表示
+    private func showRequestTrackingAuthorizationAlert() {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                switch status {
+                case .authorized:
+                    print("🎉")
+                    //IDFA取得
+                    print("IDFA: \(ASIdentifierManager.shared().advertisingIdentifier)")
+                case .denied, .restricted, .notDetermined:
+                    print("😭")
+                @unknown default:
+                    fatalError()
+                }
+            })
+        }
     }
     
     // Viewに表示される処理

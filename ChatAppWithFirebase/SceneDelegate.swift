@@ -20,9 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
 //        let storyboard = UIStoryboard(name: "ChatList", bundle: nil)
 //        let chatListViewController = storyboard.instantiateViewController(identifier: "ChatListViewController")
-//        
 //        let nv = UINavigationController(rootViewController: chatListViewController)
-
 //        window.rootViewController = nv
 
         window.rootViewController = TabBarController()

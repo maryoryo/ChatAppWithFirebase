@@ -19,6 +19,13 @@
 		A413B0582973FB4000B9FD0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A413B0572973FB4000B9FD0E /* GoogleService-Info.plist */; };
 		A4460D3F299535A30084B4D9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4460D3E299535A30084B4D9 /* TabBarController.swift */; };
 		A4460D412998C48D0084B4D9 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4460D402998C48D0084B4D9 /* TabBar.storyboard */; };
+		A4460D432998C9500084B4D9 /* WeatherApiInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4460D422998C9500084B4D9 /* WeatherApiInfo.storyboard */; };
+		A4460D452998CA040084B4D9 /* WeatherApiInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4460D442998CA040084B4D9 /* WeatherApiInfoViewController.swift */; };
+		A4460D472998DEAE0084B4D9 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4460D462998DEAE0084B4D9 /* WeatherApi.swift */; };
+		A4460D492998DF780084B4D9 /* NewsApiInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4460D482998DF780084B4D9 /* NewsApiInfo.storyboard */; };
+		A4460D4B2998E0260084B4D9 /* NewsApiInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4460D4A2998E0260084B4D9 /* NewsApiInfoViewController.swift */; };
+		A4460D4E2998F1200084B4D9 /* NewsApiInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4460D4C2998F11F0084B4D9 /* NewsApiInfoCollectionViewCell.swift */; };
+		A4460D4F2998F1200084B4D9 /* NewsApiInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4460D4D2998F1200084B4D9 /* NewsApiInfoCollectionViewCell.xib */; };
 		A46BA852297403930052B162 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A46BA851297403930052B162 /* SignUp.storyboard */; };
 		A46BA854297407A20052B162 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46BA853297407A20052B162 /* SignUpViewController.swift */; };
 		A46BA857297C08D10052B162 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46BA856297C08D10052B162 /* User.swift */; };
@@ -39,7 +46,7 @@
 		24CA71EC1FCE9F7EDADFB41A /* Pods_ChatAppWithFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatAppWithFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A33285BDC35C84D9776887 /* Pods-ChatAppWithFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppWithFirebase.release.xcconfig"; path = "Target Support Files/Pods-ChatAppWithFirebase/Pods-ChatAppWithFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		9A23380725C3C34FF05CA58E /* Pods-ChatAppWithFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppWithFirebase.debug.xcconfig"; path = "Target Support Files/Pods-ChatAppWithFirebase/Pods-ChatAppWithFirebase.debug.xcconfig"; sourceTree = "<group>"; };
-		A4089797297D5C2900D60C9F /* UserList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = UserList.storyboard; path = Storyboards/UserList.storyboard; sourceTree = "<group>"; };
+		A4089797297D5C2900D60C9F /* UserList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserList.storyboard; sourceTree = "<group>"; };
 		A4089799298553E400D60C9F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A408979B298EA27D00D60C9F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A408979D298EA4A800D60C9F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +57,13 @@
 		A413B0572973FB4000B9FD0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4460D3E299535A30084B4D9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A4460D402998C48D0084B4D9 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		A4460D422998C9500084B4D9 /* WeatherApiInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeatherApiInfo.storyboard; sourceTree = "<group>"; };
+		A4460D442998CA040084B4D9 /* WeatherApiInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiInfoViewController.swift; sourceTree = "<group>"; };
+		A4460D462998DEAE0084B4D9 /* WeatherApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
+		A4460D482998DF780084B4D9 /* NewsApiInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsApiInfo.storyboard; sourceTree = "<group>"; };
+		A4460D4A2998E0260084B4D9 /* NewsApiInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApiInfoViewController.swift; sourceTree = "<group>"; };
+		A4460D4C2998F11F0084B4D9 /* NewsApiInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApiInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		A4460D4D2998F1200084B4D9 /* NewsApiInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsApiInfoCollectionViewCell.xib; sourceTree = "<group>"; };
 		A46BA851297403930052B162 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		A46BA853297407A20052B162 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A46BA856297C08D10052B162 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -158,10 +172,9 @@
 				A413B04E2973259700B9FD0E /* LaunchScreen.storyboard */,
 				A46BE7D32972EB7D009944F0 /* Info.plist */,
 				A413B0572973FB4000B9FD0E /* GoogleService-Info.plist */,
-				A4089797297D5C2900D60C9F /* UserList.storyboard */,
-				A46BA85A297C34370052B162 /* UserListViewController.swift */,
-				A4460D3E299535A30084B4D9 /* TabBarController.swift */,
-				A4460D402998C48D0084B4D9 /* TabBar.storyboard */,
+				A4460D462998DEAE0084B4D9 /* WeatherApi.swift */,
+				A4460D4C2998F11F0084B4D9 /* NewsApiInfoCollectionViewCell.swift */,
+				A4460D4D2998F1200084B4D9 /* NewsApiInfoCollectionViewCell.xib */,
 			);
 			path = ChatAppWithFirebase;
 			sourceTree = "<group>";
@@ -169,10 +182,14 @@
 		A46BE7DD2972F6F6009944F0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A4460D3E299535A30084B4D9 /* TabBarController.swift */,
+				A46BA85A297C34370052B162 /* UserListViewController.swift */,
 				A4F69F5A297323A900B01CDF /* ChatRoomViewController.swift */,
 				A4F69F542973238E00B01CDF /* ChatListViewController.swift */,
 				A46BA853297407A20052B162 /* SignUpViewController.swift */,
 				A408979D298EA4A800D60C9F /* LoginViewController.swift */,
+				A4460D442998CA040084B4D9 /* WeatherApiInfoViewController.swift */,
+				A4460D4A2998E0260084B4D9 /* NewsApiInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -180,10 +197,14 @@
 		A46BE7DE2972F718009944F0 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				A4460D402998C48D0084B4D9 /* TabBar.storyboard */,
+				A4089797297D5C2900D60C9F /* UserList.storyboard */,
 				A4F69F58297323A000B01CDF /* ChatRoom.storyboard */,
 				A4F69F552973238E00B01CDF /* ChatList.storyboard */,
 				A46BA851297403930052B162 /* SignUp.storyboard */,
 				A408979B298EA27D00D60C9F /* Login.storyboard */,
+				A4460D422998C9500084B4D9 /* WeatherApiInfo.storyboard */,
+				A4460D482998DF780084B4D9 /* NewsApiInfo.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -257,9 +278,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4F69F572973238E00B01CDF /* ChatList.storyboard in Resources */,
+				A4460D492998DF780084B4D9 /* NewsApiInfo.storyboard in Resources */,
 				A4460D412998C48D0084B4D9 /* TabBar.storyboard in Resources */,
+				A4460D432998C9500084B4D9 /* WeatherApiInfo.storyboard in Resources */,
 				A4F69F59297323A000B01CDF /* ChatRoom.storyboard in Resources */,
 				A4089798297D5C2900D60C9F /* UserList.storyboard in Resources */,
+				A4460D4F2998F1200084B4D9 /* NewsApiInfoCollectionViewCell.xib in Resources */,
 				A413B04F2973259700B9FD0E /* LaunchScreen.storyboard in Resources */,
 				A46BE7CF2972EB7D009944F0 /* Assets.xcassets in Resources */,
 				A413B0542973DD4200B9FD0E /* ChatInputAccessoryView.xib in Resources */,
@@ -324,14 +348,18 @@
 				A46BA854297407A20052B162 /* SignUpViewController.swift in Sources */,
 				A46BE7E02972F7C4009944F0 /* UIColor-Extension.swift in Sources */,
 				A46BE7C62972EB7D009944F0 /* AppDelegate.swift in Sources */,
+				A4460D472998DEAE0084B4D9 /* WeatherApi.swift in Sources */,
 				A46BA85C297C34370052B162 /* UserListViewController.swift in Sources */,
 				A46BA857297C08D10052B162 /* User.swift in Sources */,
 				A4F69F5B297323A900B01CDF /* ChatRoomViewController.swift in Sources */,
 				A4F69F562973238E00B01CDF /* ChatListViewController.swift in Sources */,
 				A408979A298553E400D60C9F /* Message.swift in Sources */,
 				A46BE7C82972EB7D009944F0 /* SceneDelegate.swift in Sources */,
+				A4460D4B2998E0260084B4D9 /* NewsApiInfoViewController.swift in Sources */,
 				A4460D3F299535A30084B4D9 /* TabBarController.swift in Sources */,
+				A4460D452998CA040084B4D9 /* WeatherApiInfoViewController.swift in Sources */,
 				A408979E298EA4A800D60C9F /* LoginViewController.swift in Sources */,
+				A4460D4E2998F1200084B4D9 /* NewsApiInfoCollectionViewCell.swift in Sources */,
 				A46BA85F297D52D10052B162 /* ChatRoom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,9 +33,6 @@ class ChatListViewController: UIViewController {
         setupViews()
         confirmLoggedInUser()
         fetchChatroomsInfoFromFirebase()
-        
-        
-
     }
     
     override func viewWillAppear(_ animated: Bool) {

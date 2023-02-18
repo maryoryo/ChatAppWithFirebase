@@ -12,5 +12,6 @@ target 'ChatAppWithFirebase' do
   pod 'Firebase/Storage'
   pod 'Nuke'
   pod 'PKHUD'
+  pod 'Alamofire'
 
 end
