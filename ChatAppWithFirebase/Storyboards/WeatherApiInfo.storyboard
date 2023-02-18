@@ -16,27 +16,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYe-dh-gD0">
-                                <rect key="frame" x="175" y="116" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="東京都" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYe-dh-gD0">
+                                <rect key="frame" x="170.66666666666666" y="135" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nA9-ct-RCB">
-                                <rect key="frame" x="76" y="195" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nA9-ct-RCB">
+                                <rect key="frame" x="121.66666666666669" y="188" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="5F1-sU-Yx8"/>
+                                    <constraint firstAttribute="width" constant="150" id="gwk-x8-m1e"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkH-cL-kyV">
-                                <rect key="frame" x="175" y="416" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="晴れ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkH-cL-kyV">
+                                <rect key="frame" x="179" y="370" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qnx-fa-jOu">
-                                <rect key="frame" x="175" y="516" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qnx-fa-jOu">
+                                <rect key="frame" x="177.66666666666666" y="423" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,8 +44,24 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qnx-fa-jOu" firstAttribute="top" secondItem="RkH-cL-kyV" secondAttribute="bottom" constant="32" id="3BU-hj-g80"/>
+                            <constraint firstItem="nA9-ct-RCB" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="LuT-b9-O6g"/>
+                            <constraint firstItem="bYe-dh-gD0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="32" id="Us5-Iz-yEH"/>
+                            <constraint firstItem="RkH-cL-kyV" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="XFe-TI-drc"/>
+                            <constraint firstItem="nA9-ct-RCB" firstAttribute="top" secondItem="bYe-dh-gD0" secondAttribute="bottom" constant="32" id="Yqz-Q4-l7e"/>
+                            <constraint firstItem="RkH-cL-kyV" firstAttribute="top" secondItem="nA9-ct-RCB" secondAttribute="bottom" constant="32" id="agf-Zt-l6p"/>
+                            <constraint firstItem="Qnx-fa-jOu" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="eXf-Xv-YNy"/>
+                            <constraint firstItem="bYe-dh-gD0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ts3-HS-huy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ml2-FF-WSG"/>
+                    <connections>
+                        <outlet property="celsiusLabel" destination="Qnx-fa-jOu" id="nq3-I3-Gjl"/>
+                        <outlet property="prefectureLabel" destination="bYe-dh-gD0" id="kqA-jq-MQP"/>
+                        <outlet property="weatherImage" destination="nA9-ct-RCB" id="xSU-6C-ZQN"/>
+                        <outlet property="weatherTelop" destination="RkH-cL-kyV" id="xX0-wr-5r9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,8 +18,15 @@ class NewsApiInfoViewController: UIViewController {
         newsCollectionView.dataSource = self
         
         newsCollectionView.register(UINib(nibName: "NewsApiInfoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CustomCell")
+        
     }
+    
+    
+    
+    
 }
+
+
 
 extension NewsApiInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
