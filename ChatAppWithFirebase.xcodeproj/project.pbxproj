@@ -30,6 +30,7 @@
 		A4460D5329A0D10D0084B4D9 /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4460D5229A0D10D0084B4D9 /* NewsApi.swift */; };
 		A4460D5529A0D2F30084B4D9 /* WeatherApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4460D5429A0D2F30084B4D9 /* WeatherApiResponse.swift */; };
 		A4460D5729A0F2F50084B4D9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4460D5629A0F2F50084B4D9 /* CoreLocation.framework */; };
+		A4460D5929A1C6DE0084B4D9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A4460D5829A1C6DE0084B4D9 /* .gitignore */; };
 		A46BA852297403930052B162 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A46BA851297403930052B162 /* SignUp.storyboard */; };
 		A46BA854297407A20052B162 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46BA853297407A20052B162 /* SignUpViewController.swift */; };
 		A46BA857297C08D10052B162 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46BA856297C08D10052B162 /* User.swift */; };
@@ -72,6 +73,7 @@
 		A4460D5229A0D10D0084B4D9 /* NewsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApi.swift; sourceTree = "<group>"; };
 		A4460D5429A0D2F30084B4D9 /* WeatherApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiResponse.swift; sourceTree = "<group>"; };
 		A4460D5629A0F2F50084B4D9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A4460D5829A1C6DE0084B4D9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A46BA851297403930052B162 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		A46BA853297407A20052B162 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A46BA856297C08D10052B162 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		A46BE7B92972EB7C009944F0 = {
 			isa = PBXGroup;
 			children = (
+				A4460D5829A1C6DE0084B4D9 /* .gitignore */,
 				A46BE7C42972EB7D009944F0 /* ChatAppWithFirebase */,
 				A46BE7C32972EB7D009944F0 /* Products */,
 				558E99B8903590B02DA5D977 /* Pods */,
@@ -300,6 +303,7 @@
 				A413B04F2973259700B9FD0E /* LaunchScreen.storyboard in Resources */,
 				A46BE7CF2972EB7D009944F0 /* Assets.xcassets in Resources */,
 				A413B0542973DD4200B9FD0E /* ChatInputAccessoryView.xib in Resources */,
+				A4460D5929A1C6DE0084B4D9 /* .gitignore in Resources */,
 				A413B04B2973242500B9FD0E /* ChatRoomTableViewCell.xib in Resources */,
 				A46BA852297403930052B162 /* SignUp.storyboard in Resources */,
 				A408979C298EA27D00D60C9F /* Login.storyboard in Resources */,

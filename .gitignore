@@ -1,0 +1,6 @@
+＃ Xcode
+#　keyファイル
+AccessTokens.swift
+
+# バイナリファイルの差分
+*.xcuserstate
